@@ -44,6 +44,30 @@
                 "time": "About 1 minute",
                 "description": "This is the first SPT survey! Your survey doesn't get sent anywhere, its just for modders to see how it works and maybe make use of.",
                 "farewell": "I told you at the start the survey doesn't get sent anywhere and yet you still completed it, curious."
+            },
+            "ru": {
+                "question_1": "Насколько общий чат в дискорде SPT не соответствует теме?",
+                "question_1_answer_1": "Всегда соответствует",
+                "question_1_answer_2": "Немного не соответствует",
+                "question_1_answer_3": "Иногда не соответствует",
+                "question_1_answer_4": "Довольно часто",
+                "question_1_answer_5": "Очень часто",
+                "question_1_answer_6": "Большую часть времени",
+                "question_1_answer_7": "Почти всегда",
+                "question_1_answer_8": "Всегда",
+                "question_1_answer_9": "ВООБЩЕ НЕ ПО ТЕМЕ",
+                "question_1_answer_10": "Я ЖИВУ ДЛЯ ТОГО, ЧТОБЫ ОТВЛЕКАТЬ ОБЩИЙ ЧАТ ОТ ТЕМЫ",
+                "question_1_answer_11": "Пока мы разговариваем, я выкладываю gif-файлы в общий чат",
+                "question_2": "Когда вы загружаете мод с хаб сайта, читаете ли вы описание/руководство мода?",
+                "question_2_answer_1": "Что такое описание",
+                "question_2_answer_2": "Я не умею читать",
+                "question_2_answer_3": "Я неграмотен",
+                "question_2_answer_4": "Я слишком занят тем, что отвлекаю общий чат от темы, чтобы читать",
+                "question_2_answer_5": "ВЫ НИКОГДА НЕ ЗАСТАВИТЕ МЕНЯ ЧИТАТЬ ТЕКСТ, ВМЕСТО ЭТОГО Я СПРОШУ В ОБЩЕМ ЧАТЕ.",
+                "title": "Опрос с обратной связью",
+                "time": "Около 1 минуты",
+                "description": "Это первый опрос SPT! Он никуда не отправляется и предназначен только для моддеров, чтобы разобраться как он работает, и, возможно, задействовать позже.",
+                "farewell": "Я с самого начала говорил Вам, что опрос никуда не отправляется, но все же Вы его заполнили из любопытства."
             }
         },
         "survey": {
