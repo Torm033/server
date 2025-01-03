@@ -1,5 +1,25 @@
 {
     "enableSeasonalEventDetection": true,
+    "botAppearanceChanges": {
+        "CHRISTMAS": {
+            "usec": {
+                "body": {
+                    "675fd6897a57e0b2a00e3405": 10
+                },
+                "feet": {
+                    "675fd6b2f26b0db5f0060eb6": 10
+                }
+            },
+            "bear": {
+                "body": {
+                    "67599500a378f89a3e089b56": 10
+                },
+                "feet": {
+                    "675994c9f7adb892bd080766": 10
+                }
+            }
+        }
+    },
     "eventGear": {
         "halloween": {
             "assault": {
@@ -8341,22 +8361,43 @@
             "endDay": "31",
             "endMonth": "12",
             "settings": {
-                "enableSanta": true
+				"enableChristmasHideout": true,
+                "enableSanta": true,
+				"adjustBotAppearances": true
             }
         },
         {
             "enabled": true,
             "name": "newyears",
-            "type": "NEW_YEARS",
+            "type": "NEWYEARS",
             "startDay": "1",
             "startMonth": "1",
+            "endDay": "1",
+            "endMonth": "1",
+			"settings": {
+				"enableChristmasHideout": true,
+                "enableSanta": true,
+				"adjustBotAppearances": true
+            }
+        },
+		{
+            "enabled": true,
+            "name": "christmas January",
+            "type": "CHRISTMAS",
+            "startDay": "2",
+            "startMonth": "1",
             "endDay": "7",
-            "endMonth": "1"
+            "endMonth": "1",
+            "settings": {
+				"enableChristmasHideout": true,
+                "enableSanta": true,
+				"adjustBotAppearances": true
+            }
         },
         {
             "enabled": true,
             "name": "April fools",
-            "type": "APRIL_FOOLS",
+            "type": "APRILFOOLS",
             "startDay": "1",
             "startMonth": "4",
             "endDay": "2",
@@ -12270,5 +12311,12 @@
                 }
             ]
         }
-    }
+    },
+	"christmasContainerIds": [
+		"container_custom_DesignStuff_00427",
+		"container_Shopping_Mall_DesignStuff_00808",
+		"container_Lighthouse_DesignStuff_00001",
+		"container_shoreline_DesignStuff_00418",
+		"container_woods_design_stuff_00328"
+	]
 }

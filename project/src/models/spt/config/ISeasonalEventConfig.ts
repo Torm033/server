@@ -16,6 +16,10 @@ export interface ISeasonalEventConfig extends IBaseConfig {
     gifterSettings: IGifterSetting[];
     /** key = event, second key = map name */
     hostilitySettingsForEvent: Record<string, Record<string, IAdditionalHostilitySettings[]>>;
+    /** Ids of containers on locations that only have christmas loot */
+    christmasContainerIds: string[];
+    /** Season - botType - location (body/feet/hands/head) */
+    botAppearanceChanges: Record<SeasonalEventType, Record<string, Record<string, Record<string, number>>>>;
 }
 
 export interface ISeasonalEvent {
@@ -26,11 +30,14 @@ export interface ISeasonalEvent {
     startMonth: number;
     endDay: number;
     endMonth: number;
-    settings?: Record<string, any>;
+    settings?: Record<string, ISeasonalEventSettings | IZombieSettings>;
 }
 
-export interface IZombieSettings {
+export interface ISeasonalEventSettings {
     enabled: boolean;
+}
+
+export interface IZombieSettings extends ISeasonalEventSettings {
     mapInfectionAmount: Record<string, number>;
     disableBosses: string[];
     disableWaves: string[];

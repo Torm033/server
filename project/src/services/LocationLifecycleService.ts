@@ -31,7 +31,7 @@ import { IPmcConfig } from "@spt/models/spt/config/IPmcConfig";
 import { IRagfairConfig } from "@spt/models/spt/config/IRagfairConfig";
 import { ITraderConfig } from "@spt/models/spt/config/ITraderConfig";
 import { IRaidChanges } from "@spt/models/spt/location/IRaidChanges";
-import { ILogger } from "@spt/models/spt/utils/ILogger";
+import type { ILogger } from "@spt/models/spt/utils/ILogger";
 import { ConfigServer } from "@spt/servers/ConfigServer";
 import { SaveServer } from "@spt/servers/SaveServer";
 import { BotGenerationCacheService } from "@spt/services/BotGenerationCacheService";
@@ -47,7 +47,7 @@ import { RaidTimeAdjustmentService } from "@spt/services/RaidTimeAdjustmentServi
 import { HashUtil } from "@spt/utils/HashUtil";
 import { RandomUtil } from "@spt/utils/RandomUtil";
 import { TimeUtil } from "@spt/utils/TimeUtil";
-import { ICloner } from "@spt/utils/cloners/ICloner";
+import type { ICloner } from "@spt/utils/cloners/ICloner";
 import { inject, injectable } from "tsyringe";
 import { TransitionType } from "../models/enums/TransitionType";
 
@@ -273,12 +273,12 @@ export class LocationLifecycleService {
             return locationBaseClone;
         }
 
-        // If new spawn system is enabled, clear the spawn waves
+        // If new spawn system is enabled, clear the spawn waves to prevent x2 spawns
         if (locationBaseClone.NewSpawn) {
             locationBaseClone.waves = [];
         }
 
-        // We only need the base data
+        // Only requested base data, not loot
         if (!generateLoot) {
             return locationBaseClone;
         }
@@ -307,6 +307,7 @@ export class LocationLifecycleService {
             name.toLowerCase(),
         );
 
+        // Push chosen spawn points into returned object
         for (const spawnPoint of dynamicSpawnPoints) {
             locationBaseClone.Loot.push(spawnPoint);
         }

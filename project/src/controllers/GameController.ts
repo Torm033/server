@@ -1,3 +1,4 @@
+import { Program } from "@spt/Program";
 import { ApplicationContext } from "@spt/context/ApplicationContext";
 import { ContextVariableType } from "@spt/context/ContextVariableType";
 import { HideoutHelper } from "@spt/helpers/HideoutHelper";
@@ -88,6 +89,7 @@ export class GameController {
     }
 
     public load(): void {
+        // Runs on server start
         this.postDbLoadService.performPostDbLoadActions();
     }
 
@@ -565,11 +567,9 @@ export class GameController {
 
     protected logProfileDetails(fullProfile: ISptProfile): void {
         this.logger.debug(`Profile made with: ${fullProfile.spt.version}`);
-        this.logger.debug(
-            `Server version: ${globalThis.G_SPTVERSION || this.coreConfig.sptVersion} ${globalThis.G_COMMIT}`,
-        );
-        this.logger.debug(`Debug enabled: ${globalThis.G_DEBUG_CONFIGURATION}`);
-        this.logger.debug(`Mods enabled: ${globalThis.G_MODS_ENABLED}`);
+        this.logger.debug(`Server version: ${Program.SPT_VERSION || this.coreConfig.sptVersion} ${Program.COMMIT}`);
+        this.logger.debug(`Debug enabled: ${Program.DEBUG}`);
+        this.logger.debug(`Mods enabled: ${Program.MODS}`);
     }
 
     public getSurvey(sessionId: string): ISurveyResponseData {
